@@ -1,34 +1,23 @@
-import { Dialog, Combobox } from '@headlessui/react';
-import { ChangeEvent, FC, useRef } from 'react';
+import { Dialog } from '@headlessui/react';
+import { FC, useRef } from 'react';
+import SearchCombo from './SearchCombo';
 
-interface Props {
-	catList: {
+type Props = {
+	catList: Array<{
 		name: string;
 		url: string;
-	}[];
+	}>;
 	state: {
 		isOpen: boolean;
 		setIsOpen: (isOpen: boolean) => void;
 		query: string;
 		setQuery: (query: string) => void;
 	};
-}
+};
 
 const SearchDialog: FC<Props> = (props) => {
-	console.log(props.state.query);
+	// console.log(props.state.query);
 	const inputRef = useRef<HTMLInputElement>(null);
-
-	const filteredCats =
-		props.state.query === ''
-			? props.catList
-			: props.catList.filter((catObject) =>
-					catObject.name
-						.toLowerCase()
-						.replace(/\s/g, '')
-						.includes(
-							props.state.query?.toLowerCase().replace(/\s/g, '')
-						)
-			  );
 
 	return (
 		<Dialog
@@ -56,53 +45,15 @@ const SearchDialog: FC<Props> = (props) => {
 						</svg>
 					</button>
 				</div>
-				<Combobox
-					value={props.state.query}
-					onChange={() => {}}
-					as='div'
-					className='flex flex-col flex-grow gap-4 overflow-auto'>
-					<Combobox.Label className='flex w-full px-5 py-3 border-2 border-black rounded-full font-montserrat'>
-						<Combobox.Input
-							className='flex-grow text-lg outline-none'
-							placeholder='Search'
-							onChange={(event: ChangeEvent<HTMLInputElement>) =>
-								props.state.setQuery(event.target.value)
-							}
-							ref={inputRef}
-						/>
-						<svg
-							xmlns='http://www.w3.org/2000/svg'
-							className='w-6 h-6'
-							fill='none'
-							viewBox='0 0 24 24'
-							stroke='currentColor'
-							strokeWidth={2}>
-							<path
-								strokeLinecap='round'
-								strokeLinejoin='round'
-								d='M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z'
-							/>
-						</svg>
-					</Combobox.Label>
-					<Combobox.Options static className='overflow-auto'>
-						{filteredCats.map((catObject) => (
-							<a href={catObject.url}>
-								<Combobox.Option
-									key={catObject.name}
-									value={catObject.name}
-									className={({ active }) =>
-										`cursor-pointer select-none py-4 px-2 font-montserrat rounded-2xl ${
-											active
-												? 'bg-[#F5F5F5]'
-												: 'text-gray-900'
-										}`
-									}>
-									{catObject.name}
-								</Combobox.Option>
-							</a>
-						))}
-					</Combobox.Options>
-				</Combobox>
+				<SearchCombo
+					className='flex flex-col flex-grow gap-4 text-lg'
+					catList={props.catList}
+					query={props.state.query}
+					setQuery={props.state.setQuery}
+					staticMode={true}
+					inputRef={inputRef}
+					placeholder='Search'
+				/>
 			</Dialog.Panel>
 		</Dialog>
 	);
