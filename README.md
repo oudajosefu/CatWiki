@@ -1,6 +1,6 @@
 <!-- Please update value in the {}  -->
 
-<h1 align="center">{Your project name}</h1>
+<h1 align="center">CatWiki</h1>
 
 <div align="center">
    Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
@@ -8,11 +8,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://cat-wiki-master-three.vercel.app/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://github.com/oudajosefu/cat-wiki-master">
       Solution
     </a>
     <span> | </span>
@@ -29,30 +29,28 @@
 -   [Overview](#overview)
     -   [Built With](#built-with)
 -   [Features](#features)
--   [How to use](#how-to-use)
 -   [Contact](#contact)
--   [Acknowledgements](#acknowledgements)
 
 <!-- OVERVIEW -->
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot](./desktop-preview.png)
+![screenshot](./mobile-preview.png)
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
-
--   Where can I see your demo?
 -   What was your experience?
+    -   This was a really annoying project to build due to all the intricacies of the responsive design. Some problems came about when I tried to develop the search modal using Headless UI. I had to take some time to wrap my head around how modal styling actually works under the hood.
 -   What have you learned/improved?
--   Your wisdom? :)
+    -   I learned how to properly style modals and search input boxes. Headless UI provides a combobox component that allows for autocompletion as you type so I added it as a search bar instead that would link to the specific cat breed's page whenever the combobox option was clicked.
 
 ### Built With
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
 -   [React](https://reactjs.org/)
--   [Vue.js](https://vuejs.org/)
+-   [Next.js](https://nextjs.org/)
 -   [Tailwind](https://tailwindcss.com/)
+-   [Headless UI](https://headlessui.com/)
 
 ## Features
 
@@ -60,33 +58,7 @@ Introduce your projects by taking a screenshot or a gif. Try to tell visitors a 
 
 This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/f4NJ53rcfgrP6sBMD2jt) was to build an application to complete the given user stories.
 
-## How To Use
-
-<!-- Example: -->
-
-To clone and run this application, you'll need [Git](https://git-scm.com) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com)) installed on your computer. From your command line:
-
-```bash
-# Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
-
-# Install dependencies
-$ npm install
-
-# Run the app
-$ npm start
-```
-
-## Acknowledgements
-
-<!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example: -->
-
--   [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
--   [Node.js](https://nodejs.org/)
--   [Marked - a markdown parser](https://github.com/chjj/marked)
-
 ## Contact
 
--   Website [your-website.com](https://{your-web-site-link})
--   GitHub [@your-username](https://{github.com/your-usermame})
--   Twitter [@your-twitter](https://{twitter.com/your-username})
+-   GitHub [@oudajosefu](https://github.com/oudajosefu)
+-   Twitter [@oudajosefu](https://twitter.com/oudajosefu)
